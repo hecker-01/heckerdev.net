@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scrollbar-color: var(--main-color, #808080) rgba(0, 0, 0, 0) !important;
+  scrollbar-width: thin !important;
+}
+html:not([hide-scrollbar]) ::-webkit-scrollbar-thumb {
+  background: var(--main-color, #808080) !important;
+}
+html:not([hide-scrollbar]) ::-webkit-scrollbar {
+  width: 8px !important;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0) !important;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--main-color, #808080) !important;
+}
