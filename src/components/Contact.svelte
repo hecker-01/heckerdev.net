@@ -10,7 +10,7 @@
       type: "Discord",
       icon: "fa-brands fa-discord",
       value: "Message me on Discord",
-      href: "https://discord.gg/",
+      href: "https://discord.heckerdev.net/",
     },
     {
       type: "Github",
@@ -32,9 +32,9 @@
       href: "https://steamcommunity.com/id/Hecker_01/",
     },
     {
-      platform: "",
+      platform: "Discord",
       icon: "fa-brands fa-discord",
-      href: "https://discord.gg",
+      href: "https://discord.heckerdev.net/",
     },
   ];
 

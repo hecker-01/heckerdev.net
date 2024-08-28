@@ -4,7 +4,7 @@
   let socials = [
     {
       icon: "fab fa-discord",
-      href: "https://discord.gg/FxuCbPNK3M",
+      href: "https://discord.heckerdev.net/",
     },
     {
       icon: "fab fa-github",
