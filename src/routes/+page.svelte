@@ -2,7 +2,7 @@
   <title>Home • HeckerDev.net</title>
 </svelte:head>
 
-<script>
+<script lang="ts">
   import Main from "../components/Main.svelte";
 </script>
 

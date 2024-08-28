@@ -2,7 +2,7 @@
   <title>{$page.status || "Something went wrong!"} • HeckerDev.net</title>
 </svelte:head>
 
-<script>
+<script lang="ts">
   import { page } from "$app/stores";
 </script>
 
