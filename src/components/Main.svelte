@@ -1,7 +1,7 @@
-<script lang="ts">
+<script>
   import Step from "./Step.svelte";
 
-  let steps: { name: string; icon: string; href?: string }[] = [
+  let steps = [
     {
       name: "Hecker's Homes",
       icon: "fa-solid fa-house",
@@ -18,9 +18,9 @@
     },
   ];
 
-  let yearsProgrammed: number = new Date().getFullYear() - 2020;
+  let yearsProgrammed = new Date().getFullYear() - 2020;
 
-  let benefits: { name: string; description: string }[] = [
+  let benefits = [
     {
       name: "a self taught developer",
       description: `I taught myself to code using free online resources and have been coding for over ${yearsProgrammed} years now. I have a passion for learning and am always looking for new ways to improve my skills.`,

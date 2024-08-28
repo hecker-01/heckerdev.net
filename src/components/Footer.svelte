@@ -1,27 +1,20 @@
-<script lang="ts">
-  import { onMount } from 'svelte';
+<script>
+  let currentYear = new Date().getFullYear();
 
-  let currentYear: number;
-  let socials: { icon: string; href: string }[];
-
-  
-    currentYear = new Date().getFullYear();
-
-    socials = [
-      {
-        icon: "fab fa-discord",
-        href: "https://discord.gg/FxuCbPNK3M",
-      },
-      {
-        icon: "fab fa-github",
-        href: "https://github.com/hecker-01",
-      },
-      {
-        icon: "fas fa-envelope",
-        href: "mailto://info@heckerdev.net",
-      },
-    ];
-  
+  let socials = [
+    {
+      icon: "fab fa-discord",
+      href: "https://discord.gg/FxuCbPNK3M",
+    },
+    {
+      icon: "fab fa-github",
+      href: "https://github.com/hecker-01",
+    },
+    {
+      icon: "fas fa-envelope",
+      href: "mailto://info@heckerdev.net",
+    },
+  ];
 </script>
 
 <footer
@@ -44,7 +37,7 @@
     <div class="text-center">
       <h1 class="text-xl"><strong>Socials:</strong></h1>
       <div class="flex flex-row gap-2 mx-auto">
-        {#each socials as social}
+        {#each socials as social, index}
           <div
             class="w-[30px] h-[30px] bg-white rounded-md flex justify-center items-center"
           >

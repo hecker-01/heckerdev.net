@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   let contactDetails = [
     {
       type: "Email",
@@ -51,9 +51,9 @@
     },
   ];
 
-  let formSubmitted: boolean = false;
+  let formSubmitted = false;
 
-  function handleSubmit(event: Event) {
+  function handleSubmit(event) {
     event.preventDefault();
     formSubmitted = true;
     // TODO: add logic to send the form data to your server

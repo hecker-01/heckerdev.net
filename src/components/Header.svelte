@@ -1,5 +1,5 @@
-<script lang="ts">
-  export let y: number;
+<script>
+  export let y;
 
   export let tabs = [
     { name: "Projects ", link: "/#projects" },

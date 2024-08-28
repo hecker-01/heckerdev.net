@@ -2,7 +2,7 @@
   <title>Contact • HeckerDev.net</title>
 </svelte:head>
 
-<script lang="ts">
+<script>
   import Contact from "../../components/Contact.svelte";
 </script>
 
