@@ -20,8 +20,8 @@
 <footer
   class=" bg-black border-t border-solid border-violet-950 flex flex-col justify-center items-center w-full pb-[40]"
 >
-  <div class="flex justify-between items-center max-w-[1080px] w-[80%] py-5">
-    <div class="text-[15px] w-[205] text-center">
+  <div class="flex justify-between items-center max-w-4xl w-[80%] py-5">
+    <div class="text-[15px] w-[205] text-left">
       <h1 class=" text-xl"><strong>This Website</strong></h1>
       <p>
         Was made by <br />
@@ -34,7 +34,7 @@
         >.
       </p>
     </div>
-    <div class="text-center">
+    <div class="text-right">
       <h1 class="text-xl"><strong>Socials:</strong></h1>
       <div class="flex flex-row gap-2 mx-auto">
         {#each socials as social, index}
@@ -53,7 +53,7 @@
     </div>
   </div>
   <div
-    class="bg-gradient-to-r from-purple-950 to-purple-900 flex flex-col justify-center items-center max-w-[1120px] w-[80%] rounded-t-xl h-[40px]"
+    class="bg-gradient-to-r from-purple-950 to-purple-900 flex flex-col justify-center items-center max-w-5xl w-[80%] rounded-t-xl h-[40px]"
   >
     <p>© HeckerDev.net | 2020 — {currentYear}</p>
   </div>

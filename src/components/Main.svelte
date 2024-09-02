@@ -41,7 +41,7 @@
 <main class="flex flex-col flex-1 p-4">
   <section
     id="introPage"
-    class="grid grid-cols-1 lg:grid-cols-2 gap-10 py-8 sm:py-14"
+    class="grid grid-cols-1 lg:grid-cols-2 gap-10 py-8 sm:py-14 sm:px-16"
   >
     <div
       class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg:gap-10"
@@ -69,12 +69,12 @@
         Get in touch &rarr;
       </a>
     </div>
-    <div class="relative shadow-2xl grid place-items-center">
+    <div class="relative shadow-2xl grid justify-end">
       <!-- svelte-ignore a11y-img-redundant-alt -->
       <img
         src={"images/profile.png"}
         alt="Profile Picture"
-        class="object-cover z-[2] max-h-[35vh] rounded-full"
+        class="object-cover z-[2] max-h-[45vh] rounded-full"
         draggable="false"
       />
     </div>
