@@ -3,14 +3,14 @@
 
   let steps = [
     {
-      name: "Hecker's Homes",
-      icon: "fa-solid fa-house",
-      href: "https://github.com/hecker-01/heckershomes",
-    },
-    {
       name: "Hecker's Utils",
       icon: "fa-solid fa-screwdriver-wrench",
       href: "https://github.com/hecker-01/heckersutils",
+    },
+    {
+      name: "Quoter",
+      icon: "fa-solid fa-quote-left",
+      href: "/quoter",
     },
     {
       name: "Soon...",
@@ -96,18 +96,17 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
       <Step step={steps[0]}>
         <p>
-          Hecker's Homes is a <strong class="text-purple-500">Plugin</strong> I
-          made for <strong class="text-purple-500">Minecraft</strong> that
-          allows players to create and manage their<br /> own
-          <strong class="text-purple-500">homes</strong>.
-        </p>
-      </Step>
-      <Step step={steps[1]}>
-        <p>
           Hecker's Utils is a <strong class="text-purple-500">Plugin</strong> I
           made for <strong class="text-purple-500">Minecraft</strong> that
           allows administrators to use a variety of
           <strong class="text-purple-500">commands</strong> to make their lives easier.
+        </p>
+      </Step>
+      <Step step={steps[1]}>
+        <p>
+          Quoter is a Discord <strong class="text-purple-500">User Bot</strong>
+          I made that allows users to quote messages from other members into images.
+          It is simple and easy to use.
         </p>
       </Step>
       <Step step={steps[2]}>
