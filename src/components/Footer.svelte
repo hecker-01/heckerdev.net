@@ -17,23 +17,41 @@
   ];
 </script>
 
-<footer
-  class=" bg-black border-t border-solid border-violet-950 flex flex-col justify-center items-center w-full pb-[40]"
->
+<footer class="bg-black border-t border-solid border-violet-950 flex flex-col justify-center items-center w-full pb-[40]">
   <div class="flex justify-between items-center max-w-4xl w-[80%] py-5">
-    <div class="text-[15px] w-[205] text-left">
-      <h1 class=" text-xl"><strong>This Website</strong></h1>
-      <p>
-        Was made by <br />
+    
+    <!-- Container holding "This Website" and the links side by side -->
+    <div class="flex items-center space-x-8 text-[15px] text-left">
+      <div>
+        <h1 class="text-xl"><strong>This Website</strong></h1>
+        <p>
+          Was made by <br />
+          <a
+            href="https://github.com/hecker-01"
+            target="_blank"
+            class="underline"
+            style="text-decoration-color: #A855F7; text-decoration-thickness: 2px;"
+            >@Hecker-01</a
+          >.
+        </p>
+      </div>
+
+      <div class="flex flex-col space-y-1 text-sm self-end">
         <a
-          href="https://github.com/hecker-01"
-          target="_blank"
-          class="underline"
-          style="text-decoration-color: #A855F7; text-decoration-thickness: 2px;"
-          >@Hecker-01</a
-        >.
-      </p>
+          href="/terms"
+          class="underline text-purple-500 hover:text-purple-400 transition"
+          style="text-decoration-thickness: 2px;"
+          >Terms of Service</a
+        >
+        <a
+          href="/privacy"
+          class="underline text-purple-500 hover:text-purple-400 transition"
+          style="text-decoration-thickness: 2px;"
+          >Privacy Policy</a
+        >
+      </div>
     </div>
+
     <div class="text-right">
       <h1 class="text-xl"><strong>Socials:</strong></h1>
       <div class="flex flex-row gap-2 mx-auto">
@@ -52,9 +70,8 @@
       </div>
     </div>
   </div>
-  <div
-    class="bg-gradient-to-r from-purple-950 to-purple-900 flex flex-col justify-center items-center max-w-5xl w-[80%] rounded-t-xl h-[40px]"
-  >
+
+  <div class="bg-gradient-to-r from-purple-950 to-purple-900 flex flex-col justify-center items-center max-w-5xl w-[80%] rounded-t-xl h-[40px]">
     <p>© HeckerDev.net | 2020 — {currentYear}</p>
   </div>
 </footer>
