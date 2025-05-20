@@ -12,7 +12,7 @@
     },
     {
       icon: "fas fa-envelope",
-      href: "mailto://info@heckerdev.net",
+      href: "mailto:info@heckerdev.net",
     },
   ];
 </script>
