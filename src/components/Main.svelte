@@ -118,6 +118,14 @@
         </p>
       </Step>
     </div>
+    <div class="flex justify-center">
+      <a
+        href="/projects"
+        class="px-6 py-3 rounded-full bg-purple-600 text-white font-semibold shadow-lg hover:bg-purple-700 transition duration-200"
+      >
+        View All Projects
+      </a>
+    </div>
   </section>
   <section
     id="about"
