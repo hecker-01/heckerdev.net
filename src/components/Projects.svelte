@@ -9,7 +9,7 @@
       href: "https://github.com/hecker-01/heckersutils",
       description:
         "A powerful Minecraft plugin that provides administrators with a variety of commands to make server management easier.",
-      technologies: ["Java", "Paper API", "Minecraft"],
+      technologies: ["Java", "Bukkit API", "Minecraft"],
       status: "completed",
     },
     {
@@ -27,7 +27,7 @@
       href: "https://github.com/Hecker-01/heckerdev.net",
       description:
         "A modern, responsive portfolio website built with SvelteKit and TailwindCSS. Features a clean design, smooth animations, and optimized performance.",
-      technologies: ["SvelteKit", "TailwindCSS", "JavaScript", "Node.js"],
+      technologies: ["SvelteKit", "TailwindCSS", "JavaScript"],
       status: "completed",
     },
     {
@@ -36,12 +36,7 @@
       href: "https://github.com/Hecker-01/HeckersHomes",
       description:
         "A Minecraft plugin that allows players to set and teleport to multiple homes. Features include home limits, cross-world support.",
-      technologies: [
-        "Java",
-        "Paper API",
-        "Custom Storage Solution",
-        "Minecraft",
-      ],
+      technologies: ["Java", "Bukkit API", "YAML", "Minecraft"],
       status: "completed",
     },
     {
@@ -59,7 +54,7 @@
       href: "https://github.com/Hecker-01/SecretLife",
       description:
         "A Minecraft plugin based on the series 'SecretLife' from Grian on YouTube.",
-      technologies: ["Java", "Paper API", "Minecraft"],
+      technologies: ["Java", "Bukkit API", "Minecraft"],
       status: "completed",
     },
     {
@@ -68,7 +63,7 @@
       href: "https://github.com/Hecker-01/WarpPlugin",
       description:
         "Basically a copy of MariaDB-Warp-Plugin, but is more optimized, has more features, and is more user-friendly by being able to configure a lot of things in the config.yml file.",
-      technologies: ["Java", "Paper API", "Minecraft", "mySQL"],
+      technologies: ["Java", "Bukkit API", "Minecraft", "MySQL"],
       status: "completed",
     },
     {
@@ -77,7 +72,7 @@
       href: "https://github.com/Hecker-01/MCBE_Pack_Decryptor",
       description:
         "A Python CLI that decrypts encrypted Minecraft marketplace packs.",
-      technologies: ["Python", "CLI", "Minecraft", "Encryption"],
+      technologies: ["Python", "Cryptography", "Minecraft"],
       status: "completed",
     },
     {
@@ -86,14 +81,7 @@
       href: "https://github.com/hecker-01/MangaHD",
       description:
         "A modern, responsive manga and webtoon reader built with React, TailwindCSS, and Next.js.",
-      technologies: [
-        "React",
-        "TailwindCSS",
-        "TypeScript",
-        "Next.js",
-        "Node.js",
-        "MySQL",
-      ],
+      technologies: ["React", "TypeScript", "Next.js", "TailwindCSS", "MySQL"],
       status: "in-progress",
     },
     {
@@ -106,10 +94,10 @@
       status: "in-progress",
     },
     {
-      name: "dummy",
+      name: "More Projects Coming Soon",
       icon: "fa-solid fa-question",
       href: "https://github.com/hecker-01",
-      description: "",
+      description: "I'm always working on new projects. Stay tuned!",
       technologies: [],
       status: "planned",
     },
@@ -117,12 +105,30 @@
 
   // Technology filter state
   let selectedTechnology = "All";
+  let showAllTechnologies = false;
+  const maxVisibleTechnologies = 8; // Number of technologies to show initially
 
-  // Get all unique technologies
-  $: allTechnologies = [
-    "All",
-    ...new Set(projects.flatMap((project) => project.technologies)),
-  ].sort();
+  // Get all unique technologies sorted by usage count
+  $: technologyUsage = projects
+    .flatMap((project) => project.technologies)
+    .reduce((acc, tech) => {
+      acc[tech] = (acc[tech] || 0) + 1;
+      return acc;
+    }, {});
+
+  $: sortedTechnologies = Object.entries(technologyUsage)
+    .sort((a, b) => b[1] - a[1]) // Sort by count descending
+    .map(([tech]) => tech);
+
+  $: allTechnologies = ["All", ...sortedTechnologies];
+
+  // Technologies to display (limited or all)
+  $: visibleTechnologies = showAllTechnologies
+    ? allTechnologies
+    : ["All", ...sortedTechnologies.slice(0, maxVisibleTechnologies - 1)];
+
+  $: hasMoreTechnologies =
+    sortedTechnologies.length > maxVisibleTechnologies - 1;
 
   // Filter projects by technology
   $: filteredProjects =
@@ -209,7 +215,7 @@
     </div>
 
     <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-      {#each allTechnologies as tech}
+      {#each visibleTechnologies as tech}
         <button
           class="px-4 py-2 rounded-full border transition-all duration-200 {selectedTechnology ===
           tech
@@ -220,11 +226,27 @@
           {tech}
           {#if tech !== "All"}
             <span class="ml-2 text-xs opacity-70">
-              ({projects.filter((p) => p.technologies.includes(tech)).length})
+              ({technologyUsage[tech] || 0})
             </span>
           {/if}
         </button>
       {/each}
+
+      {#if hasMoreTechnologies && !showAllTechnologies}
+        <button
+          class="px-4 py-2 rounded-full border border-gray-600/50 text-gray-400 hover:border-gray-500 hover:text-gray-300 transition-all duration-200"
+          on:click={() => (showAllTechnologies = true)}
+        >
+          View More ({sortedTechnologies.length - (maxVisibleTechnologies - 1)})
+        </button>
+      {:else if showAllTechnologies && hasMoreTechnologies}
+        <button
+          class="px-4 py-2 rounded-full border border-gray-600/50 text-gray-400 hover:border-gray-500 hover:text-gray-300 transition-all duration-200"
+          on:click={() => (showAllTechnologies = false)}
+        >
+          Show Less
+        </button>
+      {/if}
     </div>
 
     {#if selectedTechnology !== "All"}
