@@ -32,6 +32,13 @@
             class="underline"
             style="text-decoration-color: #A855F7; text-decoration-thickness: 2px;"
             >@Hecker-01</a
+          >, also known as Jesse at
+          <a
+            href="https://heckr.dev"
+            rel="me"
+            class="underline"
+            style="text-decoration-color: #A855F7; text-decoration-thickness: 2px;"
+            >heckr.dev</a
           >.
         </p>
       </div>
